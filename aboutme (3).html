@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mrunmayee Kulkarni — Portfolio</title>
+<style>
+@font-face {
+  font-family: "Nohemi Black";
+  src: url("/fonts/Nohemi-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bookman Old";
+  src: url("/fonts/Bookman-Old.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* SHARED TYPOGRAPHY */
+.about-section,
+.achievements-section,
+.research-section {
+  --about-bg: #FFFFFF;
+  --about-text: #171717;
+  --about-muted: #555555;
+  --about-accent: #C62828;
+  --about-line: #E2E2E2;
+  background: var(--about-bg);
+  color: var(--about-text);
+  padding: clamp(28px, 6vw, 88px);
+  font-family: "Bookman Old", "Bookman Old Style", serif;
+  box-sizing: border-box;
+}
+.about-section *, .achievements-section *, .research-section * { box-sizing: border-box; }
+
+/* ABOUT SECTION */
+.about-topline, .about-bottom {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: var(--about-muted); font-size: 10px; letter-spacing: 1.5px;
+}
+.about-topline { border-bottom: 1px solid var(--about-line); padding-bottom: 18px; }
+.about-heading { padding: clamp(55px, 9vw, 110px) 0 50px; }
+.about-eyebrow {
+  color: var(--about-accent); font-size: 10px; letter-spacing: 1.5px; line-height: 1.8;
+}
+.about-heading h2 {
+  font-family: "Nohemi Black", sans-serif; font-weight: 900;
+  font-size: clamp(46px, 8.5vw, 112px); line-height: .95;
+  letter-spacing: -.045em; margin: 24px 0 0;
+}
+.about-heading h2 span { color: var(--about-accent); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr .9fr;
+  gap: clamp(35px, 7vw, 100px); align-items: start;
+}
+.about-intro { max-width: 610px; font-size: 15px; line-height: 1.95; color: #555555; }
+.about-intro p { margin: 0 0 24px; }
+.about-intro .intro-lead {
+  color: var(--about-text); font-size: clamp(19px, 2.1vw, 26px); line-height: 1.55;
+}
+.intro-lead em, .about-signoff { color: var(--about-accent); }
+.about-signoff { padding-top: 12px; font-style: italic; }
+.interests-panel { border: 1px solid var(--about-line); padding: clamp(18px, 3vw, 30px); }
+.interests-header {
+  display: flex; justify-content: space-between; padding-bottom: 24px;
+  border-bottom: 1px solid var(--about-line); color: var(--about-accent);
+  font-size: 10px; letter-spacing: 1.5px; line-height: 1.8;
+}
+.interest-group {
+  display: grid; grid-template-columns: 30px 1fr; gap: 12px;
+  padding: 23px 0; border-bottom: 1px solid var(--about-line);
+}
+.interest-number { color: var(--about-accent); font-size: 12px; }
+.interest-group h3 {
+  font-family: "Nohemi Black", sans-serif; font-size: 14px; line-height: 1.4;
+  margin: 0 0 10px; font-weight: 900;
+}
+.interest-group p { font-size: 13px; line-height: 1.9; color: var(--about-muted); margin: 0; }
+.interests-footer {
+  color: var(--about-accent); padding-top: 22px; font-size: 10px;
+  letter-spacing: 1.5px; line-height: 1.8;
+}
+.about-bottom { border-top: 1px solid var(--about-line); margin-top: 65px; padding-top: 20px; }
+
+/* ACHIEVEMENTS SECTION */
+.achievements-topline, .achievements-bottom {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: var(--about-muted); font-size: 10px; letter-spacing: 1.5px;
+}
+.achievements-topline { border-bottom: 1px solid var(--about-line); padding-bottom: 18px; }
+.achievements-heading { padding: clamp(55px, 9vw, 105px) 0 50px; max-width: 850px; }
+.achievements-eyebrow {
+  color: var(--about-accent); font-size: 10px; letter-spacing: 1.5px; line-height: 1.8;
+}
+.achievements-heading h2 {
+  font-family: "Nohemi Black", sans-serif; font-weight: 900;
+  font-size: clamp(46px, 8.5vw, 100px); line-height: .98;
+  letter-spacing: -.045em; margin: 24px 0;
+}
+.achievements-heading h2 span { color: var(--about-accent); }
+.achievements-intro { color: var(--about-muted); font-size: 15px; line-height: 1.9; max-width: 510px; }
+.achievements-list { border-top: 1px solid var(--about-line); }
+.achievement-item {
+  display: grid; grid-template-columns: 42px minmax(0, 1fr) 24px;
+  gap: 18px; align-items: start; padding: 30px 18px;
+  border-bottom: 1px solid var(--about-line);
+  transition: background .3s ease, padding .3s ease;
+}
+.achievement-item:hover { background: #F7F7F7; padding-left: 26px; padding-right: 26px; }
+.achievement-index { color: var(--about-accent); font-size: 12px; padding-top: 3px; }
+.achievement-type { color: var(--about-accent); font-size: 10px; letter-spacing: 1.5px; line-height: 1.8; }
+.achievement-details h3 {
+  font-family: "Bookman Old", "Bookman Old Style", serif;
+  font-size: clamp(19px, 2.6vw, 28px); font-weight: 400; line-height: 1.45;
+  margin: 9px 0;
+}
+.achievement-details p { color: var(--about-muted); font-size: 13px; line-height: 1.8; margin: 0; }
+.achievement-details .achievement-highlight {
+  color: var(--about-accent); font-family: "Nohemi Black", sans-serif;
+  font-size: clamp(27px, 4vw, 38px); font-weight: 900; line-height: 1.4; margin: 8px 0 2px;
+}
+.achievement-symbol { color: var(--about-accent); font-size: 18px; transition: transform .3s ease; }
+.achievement-item:hover .achievement-symbol { transform: translate(3px, -3px); }
+.achievements-bottom { border-top: 1px solid var(--about-line); margin-top: 50px; padding-top: 20px; }
+
+@media (max-width: 760px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-heading { padding: 65px 0 40px; }
+  .about-bottom { margin-top: 40px; }
+}
+@media (max-width: 600px) {
+  .achievements-heading { padding: 65px 0 35px; }
+  .achievement-item { grid-template-columns: 28px minmax(0, 1fr) 18px; gap: 12px; padding: 25px 8px; }
+  .achievement-item:hover { padding-left: 12px; padding-right: 12px; }
+  .achievements-bottom { margin-top: 35px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-section *, .achievements-section *, .about-section *::before,
+  .achievements-section *::before, .about-section *::after, .achievements-section *::after {
+    scroll-behavior: auto; animation: none !important; transition: none !important;
+  }
+}
+
+
+/* RESEARCH PAPERS */
+.research-section {
+  --about-bg: #FFFFFF;
+  --about-text: #171717;
+  --about-muted: #555555;
+  --about-accent: #C62828;
+  --about-line: #E2E2E2;
+  background: var(--about-bg);
+  color: var(--about-text);
+  padding: clamp(28px, 6vw, 88px);
+  font-family: "Bookman Old", "Bookman Old Style", serif;
+  box-sizing: border-box;
+}
+.research-topline, .research-bottom {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: var(--about-muted); font-size: 10px; letter-spacing: 1.5px;
+}
+.research-topline { border-bottom: 1px solid var(--about-line); padding-bottom: 18px; }
+.research-heading { padding: clamp(55px, 9vw, 105px) 0 50px; max-width: 900px; }
+.research-eyebrow {
+  color: var(--about-accent); font-size: 10px; letter-spacing: 1.5px; line-height: 1.8;
+}
+.research-heading h2 {
+  font-family: "Nohemi Black", sans-serif; font-weight: 900;
+  font-size: clamp(46px, 8.5vw, 100px); line-height: .98;
+  letter-spacing: -.045em; margin: 24px 0;
+}
+.research-heading h2 span { color: var(--about-accent); }
+.research-intro { color: var(--about-muted); font-size: 15px; line-height: 1.9; max-width: 570px; }
+.research-list { border-top: 1px solid var(--about-line); }
+.research-item {
+  display: grid; grid-template-columns: 42px minmax(0, 1fr) 24px;
+  gap: 18px; align-items: start; padding: 30px 18px;
+  border-bottom: 1px solid var(--about-line);
+  transition: background .3s ease, padding .3s ease;
+}
+.research-item:hover { background: #F7F7F7; padding-left: 26px; padding-right: 26px; }
+.research-index { color: var(--about-accent); font-size: 12px; padding-top: 4px; }
+.research-category { color: var(--about-accent); font-size: 10px; letter-spacing: 1.5px; line-height: 1.8; }
+.research-title {
+  display: inline-block; color: var(--about-text); text-decoration: none;
+  font-size: clamp(17px, 2.3vw, 25px); font-weight: 400; line-height: 1.5;
+  margin: 9px 0 8px; transition: color .2s ease;
+}
+.research-title:hover, .research-title:focus-visible { color: var(--about-accent); }
+.research-meta { color: var(--about-muted); font-size: 12px; line-height: 1.8; margin: 0; }
+.research-symbol { color: var(--about-accent); font-size: 18px; transition: transform .3s ease; }
+.research-item:hover .research-symbol { transform: translate(3px, -3px); }
+.research-bottom { border-top: 1px solid var(--about-line); margin-top: 50px; padding-top: 20px; }
+#about, #achievements, #research { scroll-margin-top: 76px; }
+@media (max-width: 600px) {
+  .research-heading { padding: 65px 0 35px; }
+  .research-item { grid-template-columns: 28px minmax(0, 1fr) 18px; gap: 12px; padding: 25px 8px; }
+  .research-item:hover { padding-left: 12px; padding-right: 12px; }
+  .research-bottom { margin-top: 35px; }
+}
+
+
+/* PROJECTS */
+.projects-section {
+  background: #FFFFFF; color: #171717;
+  padding: clamp(28px, 6vw, 88px);
+  font-family: "Bookman Old", "Bookman Old Style", serif;
+  box-sizing: border-box;
+}
+.projects-section * { box-sizing: border-box; }
+.projects-topline, .projects-bottom {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: #555555; font-size: 10px; letter-spacing: 1.5px;
+}
+.projects-topline { border-bottom: 1px solid #E2E2E2; padding-bottom: 18px; }
+.projects-heading { padding: clamp(55px, 9vw, 105px) 0 45px; max-width: 900px; }
+.projects-eyebrow { color: #C62828; font-size: 10px; letter-spacing: 1.5px; line-height: 1.8; }
+.projects-heading h2 {
+  font-family: "Nohemi Black", sans-serif; font-weight: 900;
+  font-size: clamp(46px, 8.5vw, 100px); line-height: .98;
+  letter-spacing: -.045em; margin: 24px 0;
+}
+.projects-heading h2 span { color: #C62828; }
+.projects-intro { color: #555555; font-size: 15px; line-height: 1.9; max-width: 570px; }
+.projects-list { border-top: 1px solid #E2E2E2; }
+.project-item {
+  display: grid; grid-template-columns: 42px minmax(0, 1fr) 24px;
+  gap: 18px; align-items: start; padding: 28px 18px;
+  border-bottom: 1px solid #E2E2E2;
+  transition: background .25s ease, padding .25s ease;
+}
+.project-item:hover { background: #F7F7F7; padding-left: 26px; padding-right: 26px; }
+.project-index, .project-category { color: #C62828; font-size: 10px; letter-spacing: 1.5px; line-height: 1.8; }
+.project-index { font-size: 12px; padding-top: 4px; }
+.project-title {
+  display: inline-block; color: #171717; text-decoration: none;
+  font-size: clamp(19px, 2.5vw, 28px); font-weight: 400; line-height: 1.4;
+  margin: 8px 0; transition: color .2s ease;
+}
+.project-title:hover, .project-title:focus-visible { color: #C62828; }
+.project-description { color: #555555; font-size: 13px; line-height: 1.9; margin: 0; max-width: 760px; overflow-wrap: anywhere; }
+.project-symbol { color: #C62828; font-size: 18px; transition: transform .25s ease; }
+.project-item:hover .project-symbol { transform: translate(3px, -3px); }
+.additional-research { margin-top: 58px; }
+.additional-research-heading {
+  color: #C62828; font-size: 10px; letter-spacing: 1.7px;
+  padding-bottom: 18px; border-bottom: 1px solid #E2E2E2;
+}
+.additional-research .project-item { padding-top: 24px; padding-bottom: 24px; }
+.projects-bottom { border-top: 1px solid #E2E2E2; margin-top: 48px; padding-top: 20px; }
+#projects { scroll-margin-top: 76px; }
+@media (max-width: 600px) {
+  .projects-heading { padding: 60px 0 35px; }
+  .project-item { grid-template-columns: 28px minmax(0, 1fr) 18px; gap: 12px; padding: 24px 8px; }
+  .project-item:hover { padding-left: 12px; padding-right: 12px; }
+  .projects-bottom { margin-top: 35px; }
+}
+
+/* BOOKS, RECOMMENDATIONS & COLLABORATIONS */
+.books-section, .recommendations-section, .collaborations-section {
+  background: #FFFFFF;
+  color: #171717;
+  padding: clamp(28px, 6vw, 88px);
+  font-family: "Bookman Old", "Bookman Old Style", serif;
+  box-sizing: border-box;
+}
+.books-section *, .recommendations-section *, .collaborations-section * { box-sizing: border-box; }
+.portfolio-section-topline {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: #555555; font-size: 10px; letter-spacing: 1.5px;
+  border-bottom: 1px solid #E2E2E2; padding-bottom: 18px;
+}
+.portfolio-section-heading { padding: clamp(55px, 9vw, 105px) 0 45px; max-width: 900px; }
+.portfolio-section-eyebrow { color: #C62828; font-size: 10px; letter-spacing: 1.5px; line-height: 1.8; }
+.portfolio-section-heading h2 {
+  font-family: "Nohemi Black", sans-serif; font-weight: 900;
+  font-size: clamp(46px, 8.5vw, 100px); line-height: .98;
+  letter-spacing: -.045em; margin: 24px 0;
+}
+.portfolio-section-heading h2 span { color: #C62828; }
+.portfolio-section-intro { color: #555555; font-size: 15px; line-height: 1.9; max-width: 570px; }
+.books-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.book-card {
+  border: 1px solid #E2E2E2; padding: clamp(22px, 3.5vw, 38px);
+  min-height: 310px; display: flex; flex-direction: column; align-items: flex-start;
+  background: linear-gradient(145deg, #F7F7F7, #FFFFFF);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.book-card:hover { border-color: #C62828; transform: translateY(-3px); }
+.book-number, .book-kind { color: #C62828; font-size: 10px; letter-spacing: 1.5px; }
+.book-card h3 { font-size: clamp(22px, 3vw, 32px); line-height: 1.25; font-weight: 400; margin: 24px 0 16px; }
+.book-card p { color: #555555; font-size: 13px; line-height: 1.9; margin: 0; }
+.book-foot { margin-top: auto; padding-top: 28px; color: #C62828; font-size: 10px; letter-spacing: 1.3px; }
+.recommendation-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.recommendation-card {
+  border: 1px solid #E2E2E2; background: #FFFFFF; padding: clamp(22px, 3vw, 34px);
+  display: flex; flex-direction: column; min-height: 260px;
+}
+.recommendation-quote { color: #C62828; font-size: 34px; line-height: 1; margin-bottom: 16px; }
+.recommendation-card blockquote { margin: 0; color: #555555; font-size: 14px; line-height: 1.9; }
+.recommendation-person { margin-top: auto; padding-top: 26px; }
+.recommendation-person strong { display: block; color: #171717; font-size: 14px; font-weight: 400; }
+.recommendation-person span { display: block; color: #555555; font-size: 11px; line-height: 1.7; margin-top: 5px; }
+.collab-panel {
+  display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap;
+  border: 1px solid #E2E2E2; padding: clamp(25px, 5vw, 55px);
+  background: radial-gradient(ellipse at 100% 0%, #F7F7F7 0%, #FFFFFF 48%, #FFFFFF 100%);
+}
+.collab-panel h3 { font-family: "Nohemi Black", sans-serif; font-size: clamp(27px, 4vw, 46px); line-height: 1.1; margin: 0 0 14px; }
+.collab-panel p { color: #555555; font-size: 13px; line-height: 1.9; max-width: 550px; margin: 0; }
+.collab-button {
+  display: inline-flex; align-items: center; gap: 24px; justify-content: space-between;
+  background: #C62828; color: #FFFFFF; padding: 17px 21px; text-decoration: none;
+  font-family: "Bookman Old", "Bookman Old Style", serif; font-size: 11px;
+  letter-spacing: 1.2px; border: 1px solid #C62828; white-space: nowrap;
+  transition: background .2s ease, color .2s ease;
+}
+.collab-button:hover { background: transparent; color: #C62828; }
+.portfolio-section-bottom {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: #555555; font-size: 10px; letter-spacing: 1.5px;
+  border-top: 1px solid #E2E2E2; margin-top: 48px; padding-top: 20px;
+}
+@media (max-width: 680px) {
+  .books-grid, .recommendation-list { grid-template-columns: 1fr; }
+  .book-card { min-height: 260px; }
+  .portfolio-section-heading { padding: 60px 0 35px; }
+  .collab-panel { align-items: flex-start; }
+}
+#books, #recommendations, #collaborations { scroll-margin-top: 76px; }
+
+
+/* EXPERIENCE */
+.experience-section {
+  background: #FFFFFF; color: #171717;
+  padding: clamp(28px, 6vw, 88px);
+  font-family: "Bookman Old", "Bookman Old Style", serif;
+  box-sizing: border-box;
+}
+.experience-section * { box-sizing: border-box; }
+.experience-topline {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: #555555; font-size: 10px; letter-spacing: 1.5px;
+  border-bottom: 1px solid #E2E2E2; padding-bottom: 18px;
+}
+.experience-heading { padding: clamp(55px, 9vw, 105px) 0 45px; max-width: 900px; }
+.experience-eyebrow { color: #C62828; font-size: 10px; letter-spacing: 1.5px; line-height: 1.8; }
+.experience-heading h2 {
+  font-family: "Nohemi Black", sans-serif; font-weight: 900;
+  font-size: clamp(46px, 8.5vw, 100px); line-height: .98;
+  letter-spacing: -.045em; margin: 24px 0;
+}
+.experience-heading h2 span { color: #C62828; }
+.experience-intro { color: #555555; font-size: 15px; line-height: 1.9; max-width: 570px; }
+.experience-list { border-top: 1px solid #E2E2E2; }
+.experience-item {
+  display: grid; grid-template-columns: 52px minmax(0, 1fr) 24px; gap: 18px;
+  align-items: start; padding: 30px 18px; border-bottom: 1px solid #E2E2E2;
+  transition: background .25s ease, padding .25s ease;
+}
+.experience-item:hover { background: #F7F7F7; padding-left: 26px; padding-right: 26px; }
+.experience-index { color: #C62828; font-size: 12px; padding-top: 5px; }
+.experience-type { color: #C62828; font-size: 10px; letter-spacing: 1.5px; line-height: 1.8; }
+.experience-item h3 { font-size: clamp(21px, 3vw, 30px); line-height: 1.35; font-weight: 400; margin: 10px 0 5px; }
+.experience-org { color: #555555; font-size: 13px; line-height: 1.8; margin: 0; }
+.experience-arrow { color: #C62828; font-size: 18px; padding-top: 2px; }
+.experience-bottom {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: #555555; font-size: 10px; letter-spacing: 1.5px;
+  border-top: 1px solid #E2E2E2; margin-top: 48px; padding-top: 20px;
+}
+#experience { scroll-margin-top: 76px; }
+@media (max-width: 600px) {
+  .experience-heading { padding: 60px 0 35px; }
+  .experience-item { grid-template-columns: 30px minmax(0, 1fr) 18px; gap: 12px; padding: 25px 8px; }
+  .experience-item:hover { padding-left: 12px; padding-right: 12px; }
+}
+
+/* FIXED PORTFOLIO NAVIGATION */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+.portfolio-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px clamp(20px, 6vw, 88px);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #E2E2E2;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-family: "Bookman Old", "Bookman Old Style", serif;
+}
+.portfolio-nav-brand {
+  color: #171717;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+}
+.portfolio-nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 34px);
+}
+.portfolio-nav-links a {
+  color: #555555;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  transition: color .2s ease;
+}
+.portfolio-nav-links a:hover,
+.portfolio-nav-links a:focus-visible {
+  color: #C62828;
+}
+#about, #achievements {
+  scroll-margin-top: 76px;
+}
+@media (max-width: 520px) {
+  .portfolio-nav {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .portfolio-nav-brand {
+    font-size: 10px;
+    letter-spacing: .5px;
+  }
+  .portfolio-nav-links {
+    gap: 12px;
+  }
+  .portfolio-nav-links a {
+    font-size: 9px;
+    letter-spacing: .7px;
+  }
+}
+
+
+
+/* DESKTOP CUSTOM CIRCULAR CURSOR */
+@media (hover: hover) and (pointer: fine) {
+  html, body, body * { cursor: none !important; }
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(23, 23, 23, .42);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate3d(-50%, -50%, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: width .28s ease, height .28s ease, border-color .28s ease, opacity .22s ease;
+    will-change: transform;
+  }
+  .custom-cursor::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #171717;
+  }
+  .custom-cursor.is-visible { opacity: 1; }
+  .custom-cursor.is-hovering {
+    width: 40px;
+    height: 40px;
+    border-color: #C62828;
+  }
+  .custom-cursor.is-hovering::after { background: #C62828; }
+}
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor { transition: none !important; }
+}
+
+
+/* CRIMSON / WHITE EDITORIAL OVERRIDES */
+:root {
+  color-scheme: light;
+  --crimson: #C62828;
+  --accent-red: #E53935;
+  --paper: #FFFFFF;
+  --soft-paper: #F7F7F7;
+  --ink: #171717;
+  --muted-ink: #555555;
+  --rule: #E2E2E2;
+}
+html, body { background: var(--paper) !important; color: var(--ink); }
+.about-section, .achievements-section, .research-section, .projects-section,
+.books-section, .recommendations-section, .collaborations-section, .experience-section {
+  background: var(--paper);
+  color: var(--ink);
+}
+.about-intro, .achievements-intro, .research-intro, .projects-intro,
+.portfolio-section-intro, .experience-intro { color: var(--muted-ink); }
+.about-intro .intro-lead { color: var(--ink); }
+.about-section, .achievements-section, .research-section, .projects-section,
+.books-section, .recommendations-section, .collaborations-section, .experience-section {
+  position: relative;
+  isolation: isolate;
+}
+.about-topline, .about-bottom, .achievements-topline, .achievements-bottom,
+.research-topline, .research-bottom, .projects-topline, .projects-bottom,
+.portfolio-section-topline, .portfolio-section-bottom, .experience-topline,
+.experience-bottom { color: var(--muted-ink); }
+.about-eyebrow, .about-heading h2 span, .intro-lead em, .about-signoff,
+.interests-header, .interest-number, .interests-footer,
+.achievements-eyebrow, .achievements-heading h2 span, .achievement-index,
+.achievement-type, .achievement-highlight, .achievement-symbol,
+.research-eyebrow, .research-heading h2 span, .research-index,
+.research-category, .research-symbol, .projects-eyebrow, .projects-heading h2 span,
+.project-index, .project-category, .project-symbol, .additional-research-heading,
+.portfolio-section-eyebrow, .portfolio-section-heading h2 span,
+.book-number, .book-kind, .book-foot, .recommendation-quote,
+.experience-eyebrow, .experience-heading h2 span, .experience-index,
+.experience-type, .experience-arrow { color: var(--crimson); }
+.about-topline, .about-bottom, .achievements-topline, .achievements-bottom,
+.research-topline, .research-bottom, .projects-topline, .projects-bottom,
+.portfolio-section-topline, .portfolio-section-bottom, .experience-topline,
+.experience-bottom, .interests-header, .interest-group, .achievements-list,
+.achievement-item, .research-list, .research-item, .projects-list,
+.project-item, .additional-research-heading, .book-card, .collab-panel,
+.experience-list, .experience-item { border-color: var(--rule); }
+.interests-panel { border-color: var(--rule); background: #fff; }
+.interest-group p, .achievement-details p, .research-meta, .project-description,
+.book-card p, .recommendation-person span, .collab-panel p, .experience-org { color: var(--muted-ink); }
+.achievement-item:hover, .research-item:hover, .project-item:hover, .experience-item:hover {
+  background: var(--soft-paper);
+}
+.research-title, .project-title { color: var(--ink); }
+.research-title:hover, .research-title:focus-visible,
+.project-title:hover, .project-title:focus-visible { color: var(--accent-red); }
+.book-card {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F7F7F7 100%);
+  box-shadow: 0 8px 24px rgba(23,23,23,.025);
+}
+.book-card:hover { border-color: var(--crimson); box-shadow: 0 14px 32px rgba(198,40,40,.08); }
+.recommendation-card { border-color: var(--rule); background: #F7F7F7; }
+.recommendation-card blockquote { color: #333; }
+.recommendation-person strong { color: var(--ink); }
+.collab-panel {
+  border-color: #E7B7B7;
+  background: radial-gradient(ellipse at 100% 0%, rgba(229,57,53,.075) 0%, #FFFFFF 54%, #F7F7F7 100%);
+}
+.collab-button {
+  background: var(--crimson); color: #fff; border-color: var(--crimson);
+}
+.collab-button:hover, .collab-button:focus-visible { background: #fff; color: var(--crimson); }
+.portfolio-nav {
+  background: rgba(255,255,255,.94);
+  border-bottom-color: var(--rule);
+  box-shadow: 0 4px 22px rgba(23,23,23,.035);
+}
+.portfolio-nav-brand { color: var(--ink); }
+.portfolio-nav-links a { color: var(--muted-ink); }
+.portfolio-nav-links a:hover, .portfolio-nav-links a:focus-visible { color: var(--crimson); }
+.custom-cursor { border-color: rgba(23,23,23,.42); }
+.custom-cursor::after { background: var(--crimson); }
+.custom-cursor.is-hovering { border-color: var(--crimson); }
+.custom-cursor.is-hovering::after { background: var(--accent-red); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-red); outline-offset: 4px; }
+
+/* A sculptural, CSS-only glass orb: static by default, animated only when motion is welcome. */
+.about-heading { position: relative; }
+.about-heading h2, .about-heading .about-eyebrow { position: relative; z-index: 2; }
+.orb-stage {
+  position: absolute; z-index: 1; right: clamp(0px, 5vw, 72px); top: 10%;
+  width: clamp(150px, 22vw, 300px); aspect-ratio: 1;
+  display: grid; place-items: center; pointer-events: none;
+  perspective: 900px; transform: translate3d(var(--orb-x, 0px), var(--orb-y, 0px), 0);
+  transition: transform .25s ease-out;
+}
+.orb-halo {
+  position: absolute; inset: 12%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(229,57,53,.13), rgba(229,57,53,0) 68%);
+  filter: blur(12px);
+}
+.orb {
+  position: relative; width: 76%; aspect-ratio: 1; border-radius: 50%;
+  overflow: hidden; transform-style: preserve-3d;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,1) 0 7%, rgba(255,255,255,.82) 15%, transparent 34%),
+    radial-gradient(ellipse at 74% 72%, rgba(198,40,40,.92), transparent 28%),
+    radial-gradient(ellipse at 63% 37%, rgba(229,57,53,.58), transparent 34%),
+    radial-gradient(ellipse at 34% 75%, rgba(255,255,255,.95), transparent 35%),
+    linear-gradient(135deg, #fff 4%, #f5dede 42%, #fff 68%, #e8a5a5 100%);
+  border: 1px solid rgba(198,40,40,.28);
+  box-shadow: inset -15px -18px 28px rgba(128,0,0,.13),
+              inset 12px 10px 22px rgba(255,255,255,.96),
+              0 24px 55px rgba(198,40,40,.14), 0 5px 18px rgba(23,23,23,.08);
+}
+.orb::before {
+  content: ""; position: absolute; inset: 7%; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.9);
+  background: linear-gradient(125deg, rgba(255,255,255,.62), transparent 35%, rgba(198,40,40,.12) 70%, transparent);
+  transform: translateZ(12px);
+}
+.orb-gloss {
+  position: absolute; left: 17%; top: 13%; width: 31%; height: 15%;
+  border-radius: 50%; background: rgba(255,255,255,.86);
+  filter: blur(5px); transform: rotate(-35deg);
+}
+.orb-reflection {
+  position: absolute; right: 10%; top: 24%; width: 10%; height: 36%;
+  border-radius: 50%; background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,0));
+  filter: blur(2px); transform: rotate(-24deg);
+}
+@keyframes orbFloat { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-9px) rotate(3deg); } }
+@keyframes orbTurn { 0%,100% { filter: saturate(.95); } 50% { filter: saturate(1.12); } }
+@media (prefers-reduced-motion: no-preference) and (min-width: 761px) {
+  .orb { animation: orbFloat 7s ease-in-out infinite, orbTurn 9s ease-in-out infinite; }
+}
+@media (min-width: 761px) {
+  .about-heading h2 { max-width: 76%; }
+}
+@media (max-width: 760px) {
+  .orb-stage { right: 0; top: 0; width: clamp(110px, 31vw, 170px); opacity: .8; }
+  .about-heading h2 { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .orb-stage { top: 4px; right: -8px; width: 100px; opacity: .55; }
+  .about-heading .about-eyebrow { max-width: 78%; }
+}
+
+/* Project links get a measured perspective response without changing their hit area. */
+.project-item {
+  position: relative; transform-style: preserve-3d; transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  will-change: transform;
+}
+.project-item::after {
+  content: ""; position: absolute; left: 0; top: 12%; bottom: 12%; width: 2px;
+  background: var(--accent-red); opacity: 0; transform: scaleY(.55);
+  transition: opacity .25s ease, transform .25s ease; pointer-events: none;
+}
+.project-item:hover::after, .project-item:focus-within::after { opacity: 1; transform: scaleY(1); }
+.project-item > * { position: relative; z-index: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .project-item { transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .18s ease-out; }
+  .project-item:hover { box-shadow: 0 12px 28px rgba(198,40,40,.055); border-bottom-color: rgba(198,40,40,.35); }
+}
+@media (hover: none), (pointer: coarse) {
+  .project-item { transform: none !important; }
+  .project-item:active { background: #F7F7F7; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+  .project-item { transform: none !important; }
+}
+
+
+/* CINEMATIC LANDING INTRO — orb grows centrally, name pops, orb travels to the side */
+.intro-screen {
+  position: fixed; inset: 0; z-index: 99999; display: grid; place-items: center;
+  overflow: hidden; background: #FFFFFF; color: #171717; pointer-events: none;
+  animation: introCurtainOut .65s cubic-bezier(.76,0,.24,1) 2.45s forwards;
+}
+.intro-inner {
+  position: relative; z-index: 1; display: flex; flex-direction: column;
+  align-items: center; gap: 15px; padding: 24px; text-align: center;
+}
+.intro-orb {
+  position: relative; width: clamp(54px, 10vw, 86px); aspect-ratio: 1;
+  border-radius: 50%; overflow: hidden; opacity: 0; transform: scale(.08);
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,1) 0 7%, rgba(255,255,255,.82) 15%, transparent 34%),
+    radial-gradient(ellipse at 74% 72%, rgba(198,40,40,.92), transparent 28%),
+    radial-gradient(ellipse at 63% 37%, rgba(229,57,53,.58), transparent 34%),
+    radial-gradient(ellipse at 34% 75%, rgba(255,255,255,.95), transparent 35%),
+    linear-gradient(135deg, #fff 4%, #f5dede 42%, #fff 68%, #e8a5a5 100%);
+  border: 1px solid rgba(198,40,40,.28);
+  box-shadow: inset -15px -18px 28px rgba(128,0,0,.13), inset 12px 10px 22px rgba(255,255,255,.96), 0 24px 55px rgba(198,40,40,.16);
+  animation: introOrbJourney 2.35s cubic-bezier(.2,.75,.25,1) .05s both;
+}
+.intro-orb::before {
+  content: ""; position: absolute; inset: 7%; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.9);
+  background: linear-gradient(125deg, rgba(255,255,255,.62), transparent 35%, rgba(198,40,40,.12) 70%, transparent);
+}
+.intro-orb::after {
+  content: ""; position: absolute; left: 17%; top: 13%; width: 31%; height: 15%;
+  border-radius: 50%; background: rgba(255,255,255,.86); filter: blur(5px); transform: rotate(-35deg);
+}
+.intro-name {
+  font-family: "Nohemi Black", sans-serif; font-size: clamp(17px, 3vw, 25px);
+  letter-spacing: .10em; text-transform: uppercase; opacity: 0;
+  transform: translateY(18px) scale(.88); transform-origin: center;
+  animation: introNamePop .55s cubic-bezier(.2,1.5,.45,1) .88s forwards;
+}
+.intro-caption {
+  color: #777; font-family: "Bookman Old", "Bookman Old Style", serif;
+  font-size: 9px; letter-spacing: .24em; text-transform: uppercase;
+  opacity: 0; transform: translateY(8px);
+  animation: introCaptionIn .4s ease 1.18s forwards;
+}
+.intro-progress { width: 116px; height: 2px; overflow: hidden; margin-top: 5px; background: #F0E4E4; opacity: 0; }
+.intro-progress::after {
+  content: ""; display: block; width: 100%; height: 100%; background: #C62828;
+  transform: scaleX(0); transform-origin: left;
+  animation: introProgress .9s cubic-bezier(.65,0,.35,1) 1.28s forwards;
+}
+@keyframes introOrbJourney {
+  0% { opacity: 0; transform: translate(0,0) scale(.08); }
+  12% { opacity: 1; }
+  48% { opacity: 1; transform: translate(0,0) scale(2.35); }
+  61% { opacity: 1; transform: translate(0,0) scale(2.1); }
+  100% { opacity: 1; transform: translate(min(35vw, 390px), max(-22vh, -170px)) scale(.72); }
+}
+@keyframes introNamePop {
+  0% { opacity: 0; transform: translateY(18px) scale(.88); }
+  70% { opacity: 1; transform: translateY(-3px) scale(1.04); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes introCaptionIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes introProgress { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+@keyframes introCurtainOut {
+  to { opacity: 0; visibility: hidden; transform: translateY(-1.5%); }
+}
+/* Reveal the real page after the intro has finished its journey. */
+.portfolio-nav { animation: pageRiseIn .65s cubic-bezier(.2,.75,.25,1) 2.3s both; }
+.about-section { animation: pageRiseIn .85s cubic-bezier(.2,.75,.25,1) 2.34s both; }
+.orb-stage { opacity: 0; animation: sideOrbAppear .6s ease 2.12s forwards; }
+@keyframes pageRiseIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes sideOrbAppear {
+  from { opacity: 0; transform: translate3d(0, 10px, 0) scale(.82); }
+  to { opacity: 1; transform: translate3d(var(--orb-x, 0px), var(--orb-y, 0px), 0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-screen { display: none !important; animation: none !important; }
+  .portfolio-nav, .about-section, .orb-stage { animation: none !important; opacity: 1; }
+}
+@media (max-width: 600px) {
+  .intro-orb { width: 54px; }
+  .intro-inner { gap: 13px; }
+  @keyframes introOrbJourney {
+    0% { opacity: 0; transform: translate(0,0) scale(.08); }
+    12% { opacity: 1; }
+    48% { opacity: 1; transform: translate(0,0) scale(1.8); }
+    61% { opacity: 1; transform: translate(0,0) scale(1.6); }
+    100% { opacity: 1; transform: translate(31vw, -18vh) scale(.6); }
+  }
+}
+
+/* Typography boost: make crimson section labels and subheadings easier to read. */
+.about-eyebrow, .achievements-eyebrow, .research-eyebrow,
+.projects-eyebrow, .portfolio-section-eyebrow, .experience-eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.7px;
+}
+.interests-header, .interests-footer,
+.achievement-type, .research-category,
+.project-index, .project-category,
+.book-number, .book-kind, .experience-type,
+.additional-research-heading, .book-foot {
+  font-size: 12px;
+  letter-spacing: 1.35px;
+}
+.interest-group h3 { font-size: clamp(15px, 1.35vw, 17px); }
+.achievement-details h3 { font-size: clamp(21px, 2.8vw, 30px); }
+.research-title, .project-title { font-size: clamp(19px, 2.5vw, 28px); }
+.experience-item h3 { font-size: clamp(23px, 3.2vw, 33px); }
+@media (max-width: 600px) {
+  .about-eyebrow, .achievements-eyebrow, .research-eyebrow,
+  .projects-eyebrow, .portfolio-section-eyebrow, .experience-eyebrow,
+  .interests-header, .interests-footer, .achievement-type,
+  .research-category, .project-index, .project-category,
+  .book-number, .book-kind, .experience-type,
+  .additional-research-heading, .book-foot { font-size: 11px; }
+  .research-title, .project-title { font-size: clamp(19px, 5vw, 24px); }
+}
+
+</style>
+</head>
+<body style="margin:0; background:#FFFFFF;">
+<div class="intro-screen" aria-hidden="true">
+  <div class="intro-inner">
+    <div class="intro-orb"></div>
+    <div class="intro-name">Mrunmayee Kulkarni</div>
+    <div class="intro-caption">Curiosity in motion</div>
+    <div class="intro-progress"></div>
+  </div>
+</div>
+<nav class="portfolio-nav" aria-label="Main navigation">
+  <a class="portfolio-nav-brand" href="#about">MRUNMAYEE KULKARNI</a>
+  <div class="portfolio-nav-links">
+    <a href="#about">ABOUT</a>
+    <a href="#achievements">ACHIEVEMENTS</a>
+    <a href="#research">RESEARCH</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#books">BOOKS</a>
+    <a href="#recommendations">RECOMMENDATIONS</a>
+    <a href="#experience">EXPERIENCE</a>
+    <a href="#collaborations">COLLABORATIONS</a>
+  </div>
+</nav>
+
+
+<section class="about-section" id="about">
+  <div class="about-topline">
+    <span>01 — ABOUT ME</span>
+    <span>THE PERSON BEHIND THE WORK</span>
+  </div>
+
+  <div class="about-heading">
+    <p class="about-eyebrow">CURIOUS BY NATURE. MULTIDISCIPLINARY BY CHOICE.</p>
+    <h2>ONE MIND.<br><span>MANY WORLDS.</span></h2>
+    <div class="orb-stage" aria-hidden="true"><div class="orb-halo"></div><div class="orb"><div class="orb-gloss"></div><div class="orb-reflection"></div></div></div>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-intro">
+      <p class="intro-lead">
+        I'm Mrunmayee Kulkarni — a high schooler,
+        a curious mind, and a <em>polymath in progress.</em>
+      </p>
+      <p>
+        I'm drawn to questions that take me beyond a single
+        discipline. Whether it's understanding how machines learn,
+        exploring the mathematics behind complex systems, or
+        investigating questions through scientific research,
+        I love discovering how ideas connect.
+      </p>
+      <p>
+        I'm currently in Class 12, preparing for competitive
+        entrance examinations while pursuing internship
+        opportunities in AI/ML and software engineering.
+      </p>
+      <p>
+        And outside the technical world? You'll find me writing
+        poetry and prose, debating ideas, making videos to explain
+        what fascinates me, teaching, sketching, painting, or
+        listening to crime stories. Curiosity rarely stays in one lane.
+      </p>
+      <p class="about-signoff">
+        I don't have everything figured out. That's rather
+        the point.
+      </p>
+    </div>
+
+    <aside class="interests-panel">
+      <div class="interests-header">
+        <span>MY CURIOSITY, CURRENTLY</span><span>↘</span>
+      </div>
+      <div class="interest-group">
+        <span class="interest-number">01</span>
+        <div><h3>INTELLIGENCE &amp; COMPUTING</h3>
+          <p>Artificial intelligence · Machine learning · Data · Software engineering · Full-stack development</p>
+        </div>
+      </div>
+      <div class="interest-group">
+        <span class="interest-number">02</span>
+        <div><h3>SCIENCE &amp; SYSTEMS</h3>
+          <p>Scientific research · Mathematics · Quantitative trading · Quantum computing</p>
+        </div>
+      </div>
+      <div class="interest-group">
+        <span class="interest-number">03</span>
+        <div><h3>WORDS &amp; IDEAS</h3>
+          <p>Poetry · Prose · Articles · Blogging · Public speaking · Debates · Teaching · Videos</p>
+        </div>
+      </div>
+      <div class="interest-group">
+        <span class="interest-number">04</span>
+        <div><h3>THE CREATIVE SIDE</h3>
+          <p>Sketching · Painting · Visual expression · Crime stories</p>
+        </div>
+      </div>
+      <div class="interests-footer">ONE DISCIPLINE IS RARELY ENOUGH.</div>
+    </aside>
+  </div>
+
+  <div class="about-bottom">
+    <span>CLASS 12 · STUDENT &amp; ASPIRING RESEARCHER</span>
+    <span>ALWAYS EXPLORING ↗</span>
+  </div>
+</section>
+
+<section class="achievements-section" id="achievements">
+  <div class="achievements-topline">
+    <span>02 — ACHIEVEMENTS</span>
+    <span>MILESTONES ALONG THE WAY</span>
+  </div>
+
+  <div class="achievements-heading">
+    <p class="achievements-eyebrow">A RECORD OF EFFORT, CURIOSITY &amp; EXPRESSION.</p>
+    <h2>WORK THAT<br><span>SPEAKS.</span></h2>
+    <p class="achievements-intro">
+      A few milestones from my journey across academics,
+      public speaking, recognition, and the visual arts.
+    </p>
+  </div>
+
+  <div class="achievements-list">
+    <article class="achievement-item">
+      <span class="achievement-index">01</span>
+      <div class="achievement-details">
+        <span class="achievement-type">RECOGNITION</span>
+        <h3>Golden Protege Awardee</h3>
+      </div>
+      <span class="achievement-symbol">↗</span>
+    </article>
+
+    <article class="achievement-item">
+      <span class="achievement-index">02</span>
+      <div class="achievement-details">
+        <span class="achievement-type">ACADEMICS</span>
+        <h3>School Topper</h3>
+        <p class="achievement-highlight">98.4%</p>
+        <p>SSC Board Examination</p>
+      </div>
+      <span class="achievement-symbol">↗</span>
+    </article>
+
+    <article class="achievement-item">
+      <span class="achievement-index">03</span>
+      <div class="achievement-details">
+        <span class="achievement-type">PUBLIC SPEAKING</span>
+        <h3>Rank 1</h3>
+        <p>Interschool Speech Competition</p>
+      </div>
+      <span class="achievement-symbol">↗</span>
+    </article>
+
+    <article class="achievement-item">
+      <span class="achievement-index">04</span>
+      <div class="achievement-details">
+        <span class="achievement-type">PUBLIC SPEAKING</span>
+        <h3>Rank 2</h3>
+        <p>Cognitive Exchange Program Speech Competition</p>
+      </div>
+      <span class="achievement-symbol">↗</span>
+    </article>
+
+    <article class="achievement-item">
+      <span class="achievement-index">05</span>
+      <div class="achievement-details">
+        <span class="achievement-type">VISUAL ARTS</span>
+        <h3>'A' Graded Student Artist</h3>
+        <p>Intermediate Drawing Examination</p>
+        <p>Maharashtra State Board</p>
+      </div>
+      <span class="achievement-symbol">↗</span>
+    </article>
+  </div>
+
+  <div class="achievements-bottom">
+    <span>FIVE MILESTONES</span>
+    <span>STILL A WORK IN PROGRESS ↗</span>
+  </div>
+</section>
+
+
+<section class="research-section" id="research">
+  <div class="research-topline">
+    <span>03 — RESEARCH PAPERS</span>
+    <span>QUESTIONS, MODELS &amp; EXPERIMENTS</span>
+  </div>
+
+  <div class="research-heading">
+    <p class="research-eyebrow">EXPLORING IDEAS THROUGH COMPUTATION AND SCIENCE.</p>
+    <h2>QUESTIONS INTO<br><span>RESEARCH.</span></h2>
+    <p class="research-intro">
+      A collection of research exploring machine learning, evidence-grounded AI,
+      and experimental approaches to scientific questions.
+    </p>
+  </div>
+
+  <div class="research-list">
+    <article class="research-item">
+      <span class="research-index">01</span>
+      <div>
+        <span class="research-category">PHYSICS · MACHINE LEARNING</span><br>
+        <a class="research-title" href="https://doi.org/10.5281/zenodo.23186881" target="_blank" rel="noopener noreferrer">
+          Physics-Informed Neural Networks for Predicting Radiation-Induced Degradation of Electronic Components: A Simulation Study
+        </a>
+        <p class="research-meta">Open publication ↗</p>
+      </div>
+      <span class="research-symbol">↗</span>
+    </article>
+
+    <article class="research-item">
+      <span class="research-index">02</span>
+      <div>
+        <span class="research-category">OPTIMIZATION · MACHINE LEARNING</span><br>
+        <a class="research-title" href="https://doi.org/10.5281/zenodo.23186803" target="_blank" rel="noopener noreferrer">
+          Convergence Dynamics and Implicit Regularisation in Gradient-Based Optimization: A Study Using Computer Experiments
+        </a>
+        <p class="research-meta">Open publication ↗</p>
+      </div>
+      <span class="research-symbol">↗</span>
+    </article>
+
+    <article class="research-item">
+      <span class="research-index">03</span>
+      <div>
+        <span class="research-category">RETRIEVAL-AUGMENTED GENERATION · AI</span><br>
+        <a class="research-title" href="https://doi.org/10.5281/zenodo.23186701" target="_blank" rel="noopener noreferrer">
+          Claim-Level Verification and Iterative Evidence Repair in Retrieval-Augmented Generation: A Controlled Simulation Study
+        </a>
+        <p class="research-meta">Open publication ↗</p>
+      </div>
+      <span class="research-symbol">↗</span>
+    </article>
+
+    <article class="research-item">
+      <span class="research-index">04</span>
+      <div>
+        <span class="research-category">CHEMISTRY · LOW-COST DETECTION</span><br>
+        <a class="research-title" href="https://doi.org/10.5281/zenodo.22277880" target="_blank" rel="noopener noreferrer">
+          A Theoretical Low-Cost Colorimetric Approach in Screening Oxidation in Reused Cooking Oil using Natural Pigments and LED-LDR Detection
+        </a>
+        <p class="research-meta">Open publication ↗</p>
+      </div>
+      <span class="research-symbol">↗</span>
+    </article>
+
+    <article class="research-item">
+      <span class="research-index">05</span>
+      <div>
+        <span class="research-category">SEMICONDUCTORS · PHOTOVOLTAICS</span><br>
+        <a class="research-title" href="https://doi.org/10.5281/zenodo.22235719" target="_blank" rel="noopener noreferrer">
+          The Effect of Spectral Wavelength Filtering on Photovoltaic Efficiency
+        </a>
+        <p class="research-meta">Open publication ↗</p>
+      </div>
+      <span class="research-symbol">↗</span>
+    </article>
+  </div>
+
+  <div class="research-bottom">
+    <span>FIVE RESEARCH PUBLICATIONS</span>
+    <span>STILL ASKING BETTER QUESTIONS ↗</span>
+  </div>
+</section>
+
+<section class="projects-section" id="projects">
+  <div class="projects-topline">
+    <span>04 — PROJECTS</span>
+    <span>IDEAS MADE TANGIBLE</span>
+  </div>
+  <div class="projects-heading">
+    <p class="projects-eyebrow">EXPERIMENTS IN SOFTWARE, SCIENCE &amp; SYSTEMS.</p>
+    <h2>BUILT TO<br><span>EXPLORE.</span></h2>
+    <p class="projects-intro">A selection of platforms and experiments built around practical problems, learning, and ideas worth exploring.</p>
+  </div>
+  <div class="projects-list">
+    <article class="project-item">
+      <span class="project-index">01</span>
+      <div>
+        <span class="project-category">WATER RESOURCES · GIS</span><br>
+        <a class="project-title" href="https://jaldrishti.vercel.app" target="_blank" rel="noopener noreferrer">JalDrishti ↗</a>
+        <p class="project-description">Water-resource monitoring platform. Public project documentation describes watershed monitoring with field photos and satellite imagery, vegetation/water indicators, an interactive GIS map, site-trend labels and downloadable reports.</p>
+      </div>
+      <span class="project-symbol">↗</span>
+    </article>
+    <article class="project-item">
+      <span class="project-index">02</span>
+      <div>
+        <span class="project-category">EDTECH · STUDY PLANNING</span><br>
+        <a class="project-title" href="https://aakalanstudy.vercel.app" target="_blank" rel="noopener noreferrer">Aakalan Study ↗</a>
+        <p class="project-description">Study-planning and progress-tracking platform for Maharashtra SSC Class 10 students, featuring subject organization, study schedules, progress monitoring and MCQ practice.</p>
+      </div>
+      <span class="project-symbol">↗</span>
+    </article>
+    <article class="project-item">
+      <span class="project-index">03</span>
+      <div>
+        <span class="project-category">QUANTUM COMPUTING · SIMULATION</span><br>
+        <a class="project-title" href="https://pramatra.vercel.app" target="_blank" rel="noopener noreferrer">Pramatra — Grover’s Algorithm Demo ↗</a>
+        <p class="project-description">Interactive quantum-search platform combining natural-language understanding with a Grover’s algorithm simulation to demonstrate quantum-search concepts.</p>
+      </div>
+      <span class="project-symbol">↗</span>
+    </article>
+    <article class="project-item">
+      <span class="project-index">04</span>
+      <div>
+        <span class="project-category">OPEN KNOWLEDGE · EDUCATION</span><br>
+        <a class="project-title" href="https://prabodhlibrary.vercel.app" target="_blank" rel="noopener noreferrer">Prabodh Library ↗</a>
+        <p class="project-description">Free knowledge library covering mathematics, computer science, machine learning, artificial intelligence and quantum computing in an accessible format.</p>
+      </div>
+      <span class="project-symbol">↗</span>
+    </article>
+    <article class="project-item">
+      <span class="project-index">05</span>
+      <div>
+        <span class="project-category">HEALTHCARE · CLINIC OPERATIONS</span><br>
+        <a class="project-title" href="https://jeevanspandancms.vercel.app" target="_blank" rel="noopener noreferrer">Jeevanspanda CMS ↗</a>
+        <p class="project-description">Clinic-management platform designed to support healthcare administration and organize clinic operations.</p>
+      </div>
+      <span class="project-symbol">↗</span>
+    </article>
+    <article class="project-item">
+      <span class="project-index">06</span>
+      <div>
+        <span class="project-category">FINANCIAL SYSTEMS · BANKING</span><br>
+        <a class="project-title" href="https://nexuscorecbs.vercel.app" target="_blank" rel="noopener noreferrer">Nexus Core CBS ↗</a>
+        <p class="project-description">Core-banking operations platform concept covering customer services, transactions, ledger operations, credit workflows and audit/compliance controls.</p>
+      </div>
+      <span class="project-symbol">↗</span>
+    </article>
+  </div>
+
+  <div class="additional-research">
+    <div class="additional-research-heading">ADDITIONAL PROJECT &amp; RESEARCH</div>
+    <div class="projects-list">
+      <article class="project-item">
+        <span class="project-index">01</span>
+        <div>
+          <span class="project-category">MACHINE LEARNING · EXPERIMENT</span><br>
+          <span class="project-title">Can Machine Learning Extrapolate Beyond Training Data?</span>
+          <p class="project-description">Independent experiment comparing Linear Regression, Decision Tree, Random Forest and polynomial models on synthetic data, evaluating interpolation and extrapolation with MAE/RMSE.</p>
+        </div>
+      </article>
+      <article class="project-item">
+        <span class="project-index">02</span>
+        <div>
+          <span class="project-category">AI/ML · INDEPENDENT RESEARCH</span><br>
+          <span class="project-title">Independent AI/ML Research</span>
+          <p class="project-description">Independent AI/ML research, including exploration of physics-informed neural networks and model evaluation.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="projects-bottom">
+    <span>SIX PROJECTS · TWO RESEARCH EXPLORATIONS</span>
+    <span>IDEAS IN MOTION ↗</span>
+  </div>
+</section>
+
+
+<section class="books-section" id="books">
+  <div class="portfolio-section-topline">
+    <span>05 — BOOKS</span>
+    <span>IDEAS IN PRINT</span>
+  </div>
+  <div class="portfolio-section-heading">
+    <p class="portfolio-section-eyebrow">SCIENCE, PHILOSOPHY &amp; THE QUESTIONS BETWEEN THEM.</p>
+    <h2>WORDS THAT<br><span>STAY.</span></h2>
+    <p class="portfolio-section-intro">Two books, approaching different questions about intelligence, emotion, memory, and the self.</p>
+  </div>
+  <div class="books-grid">
+    <article class="book-card">
+      <span class="book-number">01 / ARTIFICIAL INTELLIGENCE</span>
+      <h3>Affective Computing: A Symphony for Man’s Contours</h3>
+      <p>Can a machine understand what a person feels, or can it only recognise patterns that resemble emotion? This book explores how AI reads sentiment through text, faces, and voices—and where those predictions can fail. Moving between research, real-world examples, privacy, bias, and the human need to feel understood, it considers what happens when technology meets the complexity of being human.</p>
+      <span class="book-foot">SCIENCE × PHILOSOPHY</span>
+    </article>
+    <article class="book-card">
+      <span class="book-number">02 / PHILOSOPHY</span>
+      <h3>The Stranger Called Me</h3>
+      <p><strong style="color:#555555;font-weight:400;">The Stranger Called Me</strong> is a brilliant philosophical inquiry exploring memory, personal change, and human identity. It bridges complex theories with everyday experiences, diving deep into how minds reconstruct the past. This captivating text beautifully challenges readers to discover what truly anchors our evolving sense of self across time.</p>
+      <span class="book-foot">MEMORY × IDENTITY</span>
+    </article>
+  </div>
+  <div class="portfolio-section-bottom">
+    <span>TWO BOOKS · TWO WAYS OF QUESTIONING</span>
+    <span>MORE TO EXPLORE ↗</span>
+  </div>
+</section>
+
+<section class="recommendations-section" id="recommendations">
+  <div class="portfolio-section-topline">
+    <span>06 — RECOMMENDATIONS</span>
+    <span>WORDS FROM COLLABORATORS</span>
+  </div>
+  <div class="portfolio-section-heading">
+    <p class="portfolio-section-eyebrow">KIND WORDS FROM PEOPLE I’VE WORKED WITH.</p>
+    <h2>WORK IS ALSO<br><span>PEOPLE.</span></h2>
+    <p class="portfolio-section-intro">A couple of recommendations shared by people who have seen my work and approach firsthand.</p>
+  </div>
+  <div class="recommendation-list">
+    <article class="recommendation-card">
+      <div class="recommendation-quote">“</div>
+      <blockquote>She thrives at the intersection of sustainability policy and software technologies. She's vibe coded and hosted several prototypes based from Clinic Management System, Bioinformatics to a Quantum Search Engine! Whilst preparing for three grand exams, she has also managed to write Research Papers on ML and other STEM topics. She's also an avid 'Writer' &amp; 'Poetess'! Absolutely fun to work with!</blockquote>
+      <div class="recommendation-person">
+        <strong>Anurag Paradkar</strong>
+        <span>GIS Analyst · Data Operations · SQL · FME · Business Intelligence · SAP · ABAP</span>
+      </div>
+    </article>
+    <article class="recommendation-card">
+      <div class="recommendation-quote">“</div>
+      <blockquote>Very dedicated, tenacious and talented.</blockquote>
+      <div class="recommendation-person">
+        <strong>Arnav Nandurkar</strong>
+        <span>Studying Physics at Fergusson College, Pune</span>
+      </div>
+    </article>
+  </div>
+  <div class="portfolio-section-bottom">
+    <span>RECOMMENDATIONS RECEIVED</span>
+    <span>GRATEFUL FOR THE PEOPLE ALONG THE WAY ↗</span>
+  </div>
+</section>
+
+<section class="experience-section" id="experience">
+  <div class="experience-topline">
+    <span>07 — EXPERIENCE</span>
+    <span>LEARNING BY BUILDING</span>
+  </div>
+  <div class="experience-heading">
+    <p class="experience-eyebrow">TAKING CURIOSITY INTO PRACTICE.</p>
+    <h2>LEARNING.<br><span>CONTRIBUTING.</span></h2>
+    <p class="experience-intro">Internship experiences across software development and artificial intelligence.</p>
+  </div>
+  <div class="experience-list">
+    <article class="experience-item">
+      <span class="experience-index">01</span>
+      <div>
+        <span class="experience-type">SOFTWARE DEVELOPMENT</span>
+        <h3>Software Development Intern</h3>
+        <p class="experience-org">The Entrepreneurship Network · October 2026</p>
+      </div>
+      <span class="experience-arrow">↗</span>
+    </article>
+    <article class="experience-item">
+      <span class="experience-index">02</span>
+      <div>
+        <span class="experience-type">ARTIFICIAL INTELLIGENCE</span>
+        <h3>Artificial Intelligence Intern</h3>
+        <p class="experience-org">InAmigos Foundation · October 2026</p>
+      </div>
+      <span class="experience-arrow">↗</span>
+    </article>
+  </div>
+  <div class="experience-bottom">
+    <span>SOFTWARE DEVELOPMENT · ARTIFICIAL INTELLIGENCE</span>
+    <span>GROWING THROUGH EXPERIENCE ↗</span>
+  </div>
+</section>
+<section class="collaborations-section" id="collaborations">
+  <div class="portfolio-section-topline">
+    <span>08 — COLLABORATIONS</span>
+    <span>LET’S BUILD SOMETHING MEANINGFUL</span>
+  </div>
+  <div class="portfolio-section-heading">
+    <p class="portfolio-section-eyebrow">OPEN TO IDEAS, RESEARCH &amp; CREATIVE COLLABORATIONS.</p>
+    <h2>HAVE AN IDEA?<br><span>LET’S TALK.</span></h2>
+    <p class="portfolio-section-intro">If you’re working on an interesting project, exploring a research question, or simply want to discuss an idea, I’d be glad to hear from you.</p>
+  </div>
+  <div class="collab-panel">
+    <div>
+      <h3>MAKE THE FIRST MOVE.</h3>
+      <p>Send me an email and tell me what you have in mind. Your email app will open with a new message addressed to me.</p>
+    </div>
+    <a class="collab-button" href="mailto:thesoulmrun@gmail.com?subject=Collaboration%20Inquiry">CONTACT ME <span>↗</span></a>
+  </div>
+  <div class="portfolio-section-bottom">
+    <span>THESOULMRUN@GMAIL.COM</span>
+    <span>GOOD WORK STARTS WITH A CONVERSATION ↗</span>
+  </div>
+</section>
+
+<div class="custom-cursor" aria-hidden="true"></div>
+<script>
+(() => {
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  if (!finePointer.matches) return;
+  const cursor = document.querySelector('.custom-cursor');
+  if (!cursor) return;
+  // Ease toward the pointer instead of snapping to it, for a softer feel.
+  let targetX = window.innerWidth / 2;
+  let targetY = window.innerHeight / 2;
+  let currentX = targetX;
+  let currentY = targetY;
+  let animationFrame = 0;
+
+  const animateCursor = () => {
+    currentX += (targetX - currentX) * 0.14;
+    currentY += (targetY - currentY) * 0.14;
+    cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate3d(-50%, -50%, 0)`;
+    animationFrame = window.requestAnimationFrame(animateCursor);
+  };
+  animateCursor();
+
+  document.addEventListener('pointermove', (event) => {
+    if (event.pointerType && event.pointerType !== 'mouse') return;
+    targetX = event.clientX;
+    targetY = event.clientY;
+    cursor.classList.add('is-visible');
+  }, { passive: true });
+  document.addEventListener('pointerover', (event) => {
+    if (event.pointerType && event.pointerType !== 'mouse') return;
+    cursor.classList.toggle('is-hovering', Boolean(event.target.closest('a, button, input, textarea, select, [role="button"]')));
+  }, { passive: true });
+  document.addEventListener('pointerdown', (event) => {
+    if (!event.pointerType || event.pointerType === 'mouse') cursor.classList.add('is-hovering');
+  }, { passive: true });
+  document.addEventListener('pointerup', () => cursor.classList.remove('is-hovering'), { passive: true });
+  document.addEventListener('pointerleave', () => cursor.classList.remove('is-visible'));
+  document.addEventListener('pointerenter', () => cursor.classList.add('is-visible'));
+})();
+
+/* Lightweight pointer parallax and project tilt; no dependencies or layout-changing transforms. */
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const orbStage = document.querySelector('.orb-stage');
+  if (!reduceMotion && finePointer && orbStage) {
+    let raf = 0, px = 0, py = 0;
+    window.addEventListener('pointermove', (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
+      const rect = orbStage.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
+      px = ((event.clientX - cx) / Math.max(window.innerWidth, 1)) * 24;
+      py = ((event.clientY - cy) / Math.max(window.innerHeight, 1)) * 20;
+      if (!raf) raf = window.requestAnimationFrame(() => {
+        orbStage.style.setProperty('--orb-x', `${Math.max(-12, Math.min(12, px))}px`);
+        orbStage.style.setProperty('--orb-y', `${Math.max(-10, Math.min(10, py))}px`);
+        raf = 0;
+      });
+    }, { passive: true });
+  }
+
+  if (reduceMotion || !finePointer) return;
+  document.querySelectorAll('.project-item').forEach((item) => {
+    item.addEventListener('pointermove', (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
+      const rect = item.getBoundingClientRect();
+      const nx = (event.clientX - rect.left) / rect.width - 0.5;
+      const ny = (event.clientY - rect.top) / rect.height - 0.5;
+      item.style.setProperty('--tilt-y', `${(nx * 2.2).toFixed(2)}deg`);
+      item.style.setProperty('--tilt-x', `${(-ny * 1.5).toFixed(2)}deg`);
+    }, { passive: true });
+    const resetTilt = () => {
+      item.style.setProperty('--tilt-x', '0deg');
+      item.style.setProperty('--tilt-y', '0deg');
+    };
+    item.addEventListener('pointerleave', resetTilt);
+    item.addEventListener('blur', resetTilt, true);
+  });
+})();
+</script>
+
+</body>
+</html>
